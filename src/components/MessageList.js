@@ -1,14 +1,9 @@
 import React from 'react'
 import Messages from './Messages.js'
 
-export default ({ messageData }) => {
-  return (
-  <ul>
-    {
-      messageData.map(( messages, id) =>
-      <Messages key={messages.id} props={messages}/>
-      )
-    }
-  </ul>
-)
+
+const MessageList = ({messages, ...methods}) => {
+  return messages.map(message => <Messages {...message} key={message.id} {...methods} />);
 }
+
+export default MessageList
