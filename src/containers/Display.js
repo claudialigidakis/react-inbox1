@@ -1,6 +1,6 @@
 import React, { Component} from 'react'
-import MessageList from './MessageList'
-import Toolbar from './ToolBar'
+import MessageList from '../components/MessageList'
+import Toolbar from '../components/ToolBar'
 
 const messageData = [
   {
@@ -77,7 +77,7 @@ const getLabels = (action, selected, currentLabels, activeLabel) => {
 }
 
 
-class MessageData extends Component {
+class Display extends Component {
   constructor() {
     super()
      this.state = {messages: [], compose: false};
@@ -139,6 +139,7 @@ class MessageData extends Component {
     }
 
 
+
 render = () => {
    const messages = this.state.messages;
    const {
@@ -150,6 +151,8 @@ render = () => {
      handleRemoveLabel,
      markAsRead,
      markAsUnread,
+     toggleCompose,
+      handleCompose
    } = this;
    return (
      <div className="container">
@@ -160,4 +163,4 @@ render = () => {
  }
 }
 
-export default MessageData
+export default Display
